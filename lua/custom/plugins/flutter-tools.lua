@@ -29,6 +29,7 @@ return {
       map('<leader>Fo', '<cmd>FlutterOutlineOpen<cr>', '[O]utline Open')
       map('<leader>Fc', '<cmd>FlutterOutlineToggle<cr>', 'Outline Toggle ([C]lose)')
       map('<leader>Fd', '<cmd>FlutterDevTools<cr>', '[D]ev Tools')
+      map('<leader>FO', '<cmd>FlutterOpenDevTools<cr>', '[O]pen Dev Tools')
       map('<leader>Fp', '<cmd>FlutterCopyProfilerUrl<cr>', 'Copy [P]rofiler URL')
       map('<leader>Fl', '<cmd>FlutterLspRestart<cr>', '[L]SP Restart')
       
