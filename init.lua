@@ -99,6 +99,38 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = 'Delete current buffer' })
 vim.keymap.set('n', '<leader>X', '<cmd>%bd|e#|bd#<CR>', { desc = 'Delete all buffers except current' })
 
+-- Tab keymaps
+vim.keymap.set('n', '<leader>Tn', '<cmd>tabnew<CR>', { desc = '[T]ab [N]ew' })
+vim.keymap.set('n', '<leader>Tc', '<cmd>tabclose<CR>', { desc = '[T]ab [C]lose' })
+vim.keymap.set('n', '<leader>To', '<cmd>tabonly<CR>', { desc = '[T]ab [O]nly (close others)' })
+vim.keymap.set('n', '<Tab>', '<cmd>tabnext<CR>', { desc = 'Next tab' })
+vim.keymap.set('n', '<S-Tab>', '<cmd>tabprevious<CR>', { desc = 'Previous tab' })
+
+-- Function to move current tab to bottom split of previous tab
+vim.keymap.set('n', '<leader>Ts', function()
+  local current_tab = vim.fn.tabpagenr()
+  if current_tab == 1 then
+    vim.notify('No previous tab to merge into', vim.log.levels.WARN)
+    return
+  end
+  
+  -- Get current buffer before moving
+  local buf = vim.api.nvim_get_current_buf()
+  
+  -- Go to previous tab
+  vim.cmd('tabprevious')
+  
+  -- Create bottom split at 35% height
+  vim.cmd('botright split')
+  vim.cmd('resize ' .. math.floor(vim.o.lines * 0.35))
+  
+  -- Set the buffer in the new split
+  vim.api.nvim_set_current_buf(buf)
+  
+  -- Close the original tab
+  vim.cmd('execute "tabclose ' .. current_tab .. '"')
+end, { desc = '[T]ab to [S]plit (bottom 35%)' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -272,6 +304,7 @@ require('lazy').setup({
       spec = {
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>T', group = '[T]ab' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>F', group = '[F]lutter' },
       },
