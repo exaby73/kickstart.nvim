@@ -113,20 +113,20 @@ vim.keymap.set('n', '<leader>Ts', function()
     vim.notify('No previous tab to merge into', vim.log.levels.WARN)
     return
   end
-  
+
   -- Get current buffer before moving
   local buf = vim.api.nvim_get_current_buf()
-  
+
   -- Go to previous tab
-  vim.cmd('tabprevious')
-  
+  vim.cmd 'tabprevious'
+
   -- Create bottom split at 35% height
-  vim.cmd('botright split')
+  vim.cmd 'botright split'
   vim.cmd('resize ' .. math.floor(vim.o.lines * 0.35))
-  
+
   -- Set the buffer in the new split
   vim.api.nvim_set_current_buf(buf)
-  
+
   -- Close the original tab
   vim.cmd('execute "tabclose ' .. current_tab .. '"')
 end, { desc = '[T]ab to [S]plit (bottom 35%)' })
@@ -700,7 +700,8 @@ require('lazy').setup({
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
+        preset = 'enter',
+        ['<Tab>'] = { 'accept', 'fallback' },
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps

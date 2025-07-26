@@ -65,3 +65,13 @@ vim.api.nvim_create_autocmd('FileType', {
   desc = 'Set tab width to 2 for Dart files',
 })
 
+-- Auto-save on focus change
+vim.api.nvim_create_autocmd({ 'FocusLost', 'WinLeave', 'BufLeave' }, {
+  pattern = '*',
+  callback = function()
+    if vim.bo.modified and not vim.bo.readonly and vim.fn.expand '%' ~= '' and vim.bo.buftype == '' then
+      vim.api.nvim_command 'silent! write'
+    end
+  end,
+  desc = 'Auto-save buffer on focus change',
+})
