@@ -4,7 +4,20 @@ local map = vim.keymap.set
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Buffer management
-map('n', '<leader>x', '<cmd>bd<CR>', { desc = 'Delete current buffer' })
+map('n', '<leader>x', function()
+  local current_buf = vim.api.nvim_get_current_buf()
+
+  -- Use mini.bufremove if available (same as bufferline uses)
+  local ok, mini_bufremove = pcall(require, 'mini.bufremove')
+  if ok then
+    mini_bufremove.delete(current_buf, false)
+    return
+  end
+
+  -- Fallback to simple bd command
+  vim.cmd 'bd'
+end, { desc = 'Delete current buffer' })
+
 map('n', '<leader>X', '<cmd>%bd|e#|bd#<CR>', { desc = 'Delete all buffers except current' })
 
 -- Tab management
@@ -41,3 +54,4 @@ map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+

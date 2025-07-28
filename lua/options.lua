@@ -1,7 +1,7 @@
 -- Global variables
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- Line numbers
 vim.o.number = true
@@ -54,6 +54,9 @@ vim.o.scrolloff = 10
 
 -- Confirm operations
 vim.o.confirm = true
+
+-- Auto-reload files when changed outside of Neovim
+vim.o.autoread = true
 
 -- Autocommand for Dart files (tab width 2)
 vim.api.nvim_create_autocmd('FileType', {
