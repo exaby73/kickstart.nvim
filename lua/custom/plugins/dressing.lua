@@ -1,3 +1,7 @@
+-- Dressing.nvim: Improves the default vim.ui interfaces
+-- Provides better UI for vim.ui.select and vim.ui.input with telescope integration
+-- Lazy loads when UI functions are called for optimal performance
+
 return {
   'stevearc/dressing.nvim',
   lazy = true,

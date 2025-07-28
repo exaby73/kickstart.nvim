@@ -1,3 +1,7 @@
+-- rainbow-delimiters.nvim: Highlights matching brackets with different colors
+-- Makes nested parentheses, brackets, and braces easier to distinguish
+-- Supports language-specific strategies and custom highlighting
+
 return {
   'HiPhish/rainbow-delimiters.nvim',
   event = 'VeryLazy',

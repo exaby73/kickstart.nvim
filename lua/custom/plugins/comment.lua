@@ -1,3 +1,7 @@
+-- Comment.nvim: Smart and powerful comment plugin for Neovim
+-- Supports line and block comments with context-aware commentstring detection
+-- Integrates with treesitter for accurate commenting in embedded languages
+
 return {
   'numToStr/Comment.nvim',
   event = { 'BufReadPre', 'BufNewFile' },

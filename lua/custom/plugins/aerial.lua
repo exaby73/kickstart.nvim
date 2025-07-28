@@ -1,3 +1,6 @@
+-- aerial.nvim: A code outline window for skimming and quick navigation
+-- Provides a sidebar with tree-like view of symbols in your code (functions, classes, methods, etc.)
+-- Supports multiple backends including LSP, treesitter, and markdown
 return {
   'stevearc/aerial.nvim',
   dependencies = {

@@ -1,3 +1,7 @@
+-- lazygit.nvim: Terminal UI for git commands within Neovim
+-- Opens lazygit in a floating window for interactive git operations
+-- Provides seamless integration between Neovim and lazygit terminal interface
+
 return {
   {
     "kdheepak/lazygit.nvim",

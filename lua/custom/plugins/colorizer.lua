@@ -1,3 +1,7 @@
+-- nvim-colorizer.lua: Fastest Neovim colorizer - highlights color codes in your files
+-- Shows color previews for hex codes, RGB values, CSS colors, and Tailwind classes
+-- Displays colors as background highlights or virtual text
+
 return {
   'NvChad/nvim-colorizer.lua',
   event = { 'BufReadPre', 'BufNewFile' },

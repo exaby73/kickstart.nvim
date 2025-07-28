@@ -1,3 +1,7 @@
+-- nvim-treesitter-context: Shows code context at the top of the buffer
+-- Displays the current function/class/method context as you scroll
+-- Helps maintain awareness of code structure in long files
+
 return {
   'nvim-treesitter/nvim-treesitter-context',
   event = 'VeryLazy',

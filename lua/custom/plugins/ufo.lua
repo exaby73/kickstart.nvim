@@ -1,3 +1,7 @@
+-- nvim-ufo: Ultra fold experience with modern look and feel
+-- Enhances Neovim's fold functionality with better performance and preview
+-- Provides treesitter/LSP-based folding with customizable fold text
+
 return {
   'kevinhwang91/nvim-ufo',
   dependencies = 'kevinhwang91/promise-async',

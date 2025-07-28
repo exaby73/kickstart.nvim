@@ -1,3 +1,7 @@
+-- bufferline.nvim: A snazzy buffer line (with tabpage integration) for Neovim
+-- Shows open buffers as tabs at the top of the window with diagnostics integration
+-- Provides easy buffer navigation and management with mouse support
+
 return {
   'akinsho/bufferline.nvim',
   version = '*',

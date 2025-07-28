@@ -1,3 +1,7 @@
+-- lualine.nvim: Fast and customizable statusline for Neovim
+-- Displays mode, git info, diagnostics, file info, and navigation breadcrumbs
+-- Integrates with various plugins like gitsigns, navic, and noice
+
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },

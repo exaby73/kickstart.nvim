@@ -1,3 +1,7 @@
+-- nvim-notify: Fancy, configurable notification manager for Neovim
+-- Replaces vim.notify() with animated popup notifications
+-- Configured for compact display with bottom-up slide animations
+
 return {
   'rcarriga/nvim-notify',
   opts = {

@@ -1,3 +1,7 @@
+-- Harpoon: Quick file navigation for the most important files
+-- Mark and quickly jump between frequently used files with shortcuts
+-- Provides persistent marks across sessions with numbered quick access
+
 return {
   'ThePrimeagen/harpoon',
   branch = 'harpoon2',

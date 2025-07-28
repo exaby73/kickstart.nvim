@@ -1,3 +1,7 @@
+-- oil.nvim: File explorer that lets you edit your filesystem like a normal Neovim buffer
+-- Provides vim-like file management with direct editing capabilities
+-- Supports file operations through buffer modifications and saves
+
 return {
   'stevearc/oil.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },

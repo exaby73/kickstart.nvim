@@ -1,3 +1,7 @@
+-- windsurf.nvim: Codeium AI code completion and chat for Neovim
+-- Provides AI-powered code suggestions and interactive chat interface
+-- Supports virtual text completions with customizable key bindings
+
 return {
   'Exafunction/windsurf.nvim',
   event = 'VeryLazy',
@@ -37,4 +41,3 @@ return {
     { '<leader>cc', '<cmd>Codeium Chat<cr>', desc = 'Open Codeium Chat' },
   },
 }
-

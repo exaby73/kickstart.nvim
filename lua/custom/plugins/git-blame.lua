@@ -1,3 +1,7 @@
+-- git-blame.nvim: Git blame annotations in virtual text
+-- Shows commit author, date, and message inline for each line
+-- Toggleable display with customizable formatting and keybindings
+
 return {
   'f-person/git-blame.nvim',
   event = 'VeryLazy',

@@ -1,3 +1,7 @@
+-- Diffview.nvim: Single tabpage interface for easily cycling through diffs
+-- Provides Git diff viewing, file history, and merge conflict resolution
+-- Supports side-by-side diffs and integration with Git operations
+
 return {
   'sindrets/diffview.nvim',
   dependencies = 'nvim-lua/plenary.nvim',

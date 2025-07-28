@@ -1,3 +1,7 @@
+-- noice.nvim: Highly experimental plugin that replaces the UI for messages, cmdline and popupmenu
+-- Provides better UI for notifications, command line, and search with animations
+-- Routes different message types to appropriate views and integrates with nvim-notify
+
 return {
   'folke/noice.nvim',
   event = 'VeryLazy',

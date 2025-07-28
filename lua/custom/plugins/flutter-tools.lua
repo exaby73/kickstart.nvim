@@ -1,3 +1,7 @@
+-- flutter-tools.nvim: Enhanced Flutter development for Neovim
+-- Provides Flutter commands, hot reload, widget inspector, and DevTools integration
+-- Includes LSP configuration, closing tags, widget guides, and device management
+
 return {
   'nvim-flutter/flutter-tools.nvim',
   lazy = false,

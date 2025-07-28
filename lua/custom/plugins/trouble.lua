@@ -1,3 +1,7 @@
+-- trouble.nvim: Pretty diagnostics, references, telescope results, quickfix and location list
+-- Provides a better UI for viewing and navigating diagnostics and LSP information
+-- Groups and filters results with preview and navigation capabilities
+
 return {
   'folke/trouble.nvim',
   cmd = { 'Trouble', 'TroubleToggle' },

@@ -1,3 +1,7 @@
+-- satellite.nvim: Scrollbar with decorations for Neovim
+-- Shows cursor position, search results, diagnostics, git changes, and marks
+-- Provides visual overview of buffer content with customizable indicators
+
 return {
   {
     'lewis6991/satellite.nvim',

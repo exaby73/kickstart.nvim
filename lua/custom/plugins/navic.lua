@@ -1,3 +1,7 @@
+-- nvim-navic: Code context breadcrumbs using LSP
+-- Shows current code location (class, method, function) in statusline/winbar
+-- Automatically attaches to LSP clients with document symbol support
+
 return {
   'SmiteshP/nvim-navic',
   lazy = true,

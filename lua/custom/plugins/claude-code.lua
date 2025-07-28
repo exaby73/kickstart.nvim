@@ -1,3 +1,7 @@
+-- claudecode.nvim: Neovim integration for Claude Code AI assistant
+-- Provides AI-powered code assistance, diff management, and context-aware suggestions
+-- Allows sending code snippets and files to Claude for analysis and improvements
+
 return {
   'coder/claudecode.nvim',
   dependencies = { 'folke/snacks.nvim' },

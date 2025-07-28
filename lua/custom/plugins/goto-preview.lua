@@ -1,3 +1,7 @@
+-- goto-preview: Preview definitions, type definitions, and references in floating windows
+-- Allows peeking at LSP locations without leaving current context
+-- Supports stacked floating windows with telescope integration for references
+
 return {
   'rmagatti/goto-preview',
   config = function()

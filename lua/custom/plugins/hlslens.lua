@@ -1,3 +1,7 @@
+-- nvim-hlslens: Enhanced search experience with virtual text
+-- Shows match count and index at current search position
+-- Integrates with native search commands (n, N, *, #) for better visibility
+
 return {
   {
     'kevinhwang91/nvim-hlslens',

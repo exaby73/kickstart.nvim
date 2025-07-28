@@ -1,3 +1,7 @@
+-- legendary.nvim: Command palette and keymap browser for Neovim
+-- Provides searchable interface for commands, keymaps, and autocmds with frecency sorting
+-- Integrates with which-key for automatic keymap discovery
+
 return {
   'mrjones2014/legendary.nvim',
   priority = 10000,

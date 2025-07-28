@@ -1,3 +1,7 @@
+-- glance.nvim: Pretty window for previewing, navigating and editing LSP locations
+-- Provides floating window previews for definitions, references, implementations
+-- Better alternative to quickfix list with file preview and navigation
+
 return {
   'dnlhc/glance.nvim',
   cmd = { 'Glance' },
@@ -67,7 +71,7 @@ return {
     }
   end,
   keys = {
-    { 'gD', '<cmd>Glance definitions<cr>', desc = 'Glance definitions' },
+    { 'gE', '<cmd>Glance definitions<cr>', desc = 'Glance definitions' },
     { 'gR', '<cmd>Glance references<cr>', desc = 'Glance references' },
     { 'gY', '<cmd>Glance type_definitions<cr>', desc = 'Glance type definitions' },
     { 'gM', '<cmd>Glance implementations<cr>', desc = 'Glance implementations' },

@@ -59,14 +59,14 @@ vim.o.confirm = true
 vim.o.autoread = true
 
 -- Autocommand for Dart files (tab width 2)
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'dart',
-  callback = function()
-    vim.bo.tabstop = 2
-    vim.bo.shiftwidth = 2
-  end,
-  desc = 'Set tab width to 2 for Dart files',
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'dart',
+--   callback = function()
+--     vim.bo.tabstop = 2
+--     vim.bo.shiftwidth = 2
+--   end,
+--   desc = 'Set tab width to 2 for Dart files',
+-- })
 
 -- Auto-save on focus change
 vim.api.nvim_create_autocmd({ 'FocusLost', 'WinLeave', 'BufLeave' }, {

@@ -1,3 +1,7 @@
+-- project-utils: Utility commands for managing project.nvim history
+-- Provides commands to edit and clear project history
+-- Extends project.nvim with manual project management capabilities
+
 return {
   'ahmedkhalf/project.nvim',
   dependencies = { 'nvim-telescope/telescope.nvim' },

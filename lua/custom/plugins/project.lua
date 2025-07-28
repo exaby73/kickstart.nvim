@@ -1,3 +1,7 @@
+-- project.nvim: Automatic project management and switching
+-- Detects project roots based on patterns and maintains project history
+-- Integrates with Telescope for quick project switching
+
 return {
   'ahmedkhalf/project.nvim',
   opts = {
