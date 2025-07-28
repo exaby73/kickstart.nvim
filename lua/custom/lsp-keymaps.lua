@@ -19,13 +19,13 @@ function M.on_attach(client, bufnr)
   map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
-  -- Rename and code actions
-  map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
-  map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
+  -- Code actions
+  map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+  map('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
 
   -- Workspace and document symbols
-  map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
-  map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
+  map('<leader>cs', require('telescope.builtin').lsp_document_symbols, '[C]ode [S]ymbols (Document)')
+  map('<leader>cS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[C]ode [S]ymbols (Workspace)')
 
   -- Additional mappings that were only in init.lua
   map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')

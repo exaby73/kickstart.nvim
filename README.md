@@ -6,12 +6,12 @@ A modular Neovim configuration based on Kickstart.nvim with custom enhancements.
 
 * Clean, modular structure
 * LSP support with auto-completion
-* Fuzzy finding with Telescope
-* Syntax highlighting with Treesitter
-* Git integration with Gitsigns
-* File explorer with Neo-tree
+* Fuzzy finding and searching
+* Advanced syntax highlighting
+* Git integration
+* File explorer
 * Flutter development support
-* Custom snippets with LuaSnip
+* Custom snippets support
 
 ## Structure
 
@@ -25,28 +25,11 @@ nvim/
 │   │   ├── autocommands.lua   # Auto commands
 │   │   └── lazy_bootstrap.lua # Plugin manager bootstrap
 │   ├── kickstart/
-│   │   └── plugins/           # Core plugins
-│   │       ├── autopairs.lua
-│   │       ├── completion.lua
-│   │       ├── formatting.lua
-│   │       ├── git.lua
-│   │       ├── lsp.lua
-│   │       ├── mini.lua
-│   │       ├── misc.lua
-│   │       ├── neo-tree.lua
-│   │       ├── telescope.lua
-│   │       ├── treesitter.lua
-│   │       └── ui.lua
+│   │   └── plugins/           # Core plugins from kickstart
 │   └── custom/
 │       ├── lsp-keymaps.lua    # LSP key mappings
 │       ├── snippets/          # Custom snippets
-│       └── plugins/           # Custom plugins
-│           ├── buffer-switcher.lua
-│           ├── cybu.lua
-│           ├── flutter-tools.lua
-│           ├── luasnip.lua
-│           ├── mru-buffers.lua
-│           └── surround.lua
+│       └── plugins/           # Your custom plugins
 ```
 
 ## Installation
@@ -56,7 +39,7 @@ nvim/
 * Neovim >= 0.9.0
 * Git
 * A [Nerd Font](https://www.nerdfonts.com/) (optional, but recommended)
-* Language servers for your languages (installed automatically via Mason)
+* Language servers for your languages (installed automatically)
 
 ### Quick Start
 
@@ -80,97 +63,32 @@ nvim/
 
 4. Wait for plugins to install automatically
 
-## Key Mappings
+## Essential Key Mappings
 
-### General
+* **Leader key**: `<Space>`
+* **Navigate windows**: `<C-h/j/k/l>`
 
-* `<Space>` - Leader key
-* `<Esc>` - Clear search highlights
-* `<C-h/j/k/l>` - Navigate between windows
-
-### Buffers
-
-* `<leader>x` - Delete current buffer
-* `<leader>X` - Delete all buffers except current
-* `<leader><leader>` - Find buffers (Telescope)
-* `]b` / `[b` - Next/Previous MRU buffer
-* `<Alt-Tab>` - Cycle buffers with visual feedback (Cybu)
-
-### Tabs
-
-* `<leader>Tn` - New tab
-* `<leader>Tc` - Close tab
-* `<leader>To` - Close other tabs
-* `<leader>Ts` - Convert tab to split
-* `<Tab>` / `<S-Tab>` - Next/Previous tab
-
-### Search (Telescope)
+### Finding Things
 
 * `<leader>sf` - Find files
-* `<leader>sg` - Live grep
-* `<leader>sh` - Search help
-* `<leader>sk` - Search keymaps
-* `<leader>ss` - Search Telescope builtins
-* `<leader>sw` - Search current word
-* `<leader>sd` - Search diagnostics
-* `<leader>sr` - Resume last search
-* `<leader>s.` - Recent files
-* `<leader>sn` - Search Neovim config files
-* `<leader>/` - Fuzzy search current buffer
+* `<leader>sg` - Search by grep
+* `<leader>sk` - Search keymaps (see all mappings)
+* `<leader><leader>` - Find open buffers
+* `<leader>/` - Search in current file
 
-### LSP
+### Code Navigation
 
 * `gd` - Go to definition
-* `gr` - Go to references
-* `gI` - Go to implementation
-* `<leader>D` - Go to type definition
-* `<leader>ds` - Document symbols
-* `<leader>ws` - Workspace symbols
-* `<leader>rn` - Rename
-* `<leader>ca` - Code action
-* `gD` - Go to declaration
-* `K` - Hover documentation
-* `<C-k>` - Signature help
+* `K` - Show documentation
+* `<leader>ca` - Code actions
+* `<leader>cr` - Rename symbol
 
-### File Explorer
+### Other
 
-* `\` - Toggle Neo-tree
-
-### Formatting
-
+* `\` - Toggle file explorer
 * `<leader>f` - Format buffer
 
-### Diagnostics
-
-* `<leader>q` - Open diagnostic quickfix list
-* `[d` / `]d` - Go to previous/next diagnostic
-* `<leader>e` - Show diagnostic float
-* `<leader>q` - Set diagnostic to location list
-
-### Git (Gitsigns)
-
-* `<leader>hp` - Preview hunk
-* `<leader>hs` - Stage hunk
-* `<leader>hr` - Reset hunk
-* `<leader>hS` - Stage buffer
-* `<leader>hu` - Undo stage hunk
-* `<leader>hR` - Reset buffer
-* `<leader>hb` - Blame line
-* `<leader>hd` - Diff this
-* `<leader>hD` - Diff this ~
-* `]c` / `[c` - Next/Previous hunk
-
-### Flutter
-
-* `<leader>Fc` - Run Flutter command
-* `<leader>Fd` - Open Flutter devices
-* `<leader>Fe` - Open Flutter emulators
-* `<leader>Fr` - Flutter reload
-* `<leader>FR` - Flutter restart
-* `<leader>Fq` - Flutter quit
-* `<leader>FD` - Flutter detach
-* `<leader>Fo` - Flutter outline
-* `<leader>Fv` - Flutter dev tools
+> **Tip**: Use `<leader>sk` to discover all available key mappings!
 
 ## Customization
 
@@ -204,7 +122,7 @@ local servers = {
 
 ### Custom Snippets
 
-Add snippets in `lua/custom/snippets/` directory. See `dart.lua` for an example.
+Add snippets in `lua/custom/snippets/` directory.
 
 ## Troubleshooting
 
