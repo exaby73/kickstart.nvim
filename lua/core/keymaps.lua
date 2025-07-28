@@ -1,5 +1,17 @@
 local map = vim.keymap.set
 
+-- Reusable function to refresh buffer and syntax highlighting
+function _G.refresh_buffer()
+  -- Save current position
+  local cursor_pos = vim.api.nvim_win_get_cursor(0)
+  -- Reload the file
+  vim.cmd 'e'
+  -- Restore cursor position
+  vim.api.nvim_win_set_cursor(0, cursor_pos)
+  -- Force syntax highlighting refresh
+  vim.cmd 'syntax sync fromstart'
+end
+
 -- Clear search highlights
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -19,6 +31,7 @@ map('n', '<leader>x', function()
 end, { desc = 'Delete current buffer' })
 
 map('n', '<leader>X', '<cmd>%bd|e#|bd#<CR>', { desc = 'Delete all buffers except current' })
+map('n', '<leader>e', refresh_buffer, { desc = 'Reload buffer' })
 
 -- Tab management
 map('n', '<leader>Tn', '<cmd>tabnew<CR>', { desc = '[T]ab [N]ew' })
@@ -54,4 +67,17 @@ map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- File path copy
+map('n', '<leader>cpr', function()
+  local path = vim.fn.expand '%'
+  vim.fn.setreg('+', path)
+  vim.notify('Copied relative path: ' .. path)
+end, { desc = '[C]opy [P]ath [R]elative' })
+
+map('n', '<leader>cpa', function()
+  local path = vim.fn.expand '%:p'
+  vim.fn.setreg('+', path)
+  vim.notify('Copied absolute path: ' .. path)
+end, { desc = '[C]opy [P]ath [A]bsolute' })
 

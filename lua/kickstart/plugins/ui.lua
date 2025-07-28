@@ -75,6 +75,7 @@ return {
         { '<leader>F', group = '[F]lutter' },
         { '<leader>b', group = '[B]uffer' },
         { '<leader>sn', group = '[N]oice' },
+        { '<leader>cp', group = '[C]opy [P]ath' },
         { '<leader>1', desc = 'Harpoon file 1' },
         { '<leader>2', desc = 'Harpoon file 2' },
         { '<leader>3', desc = 'Harpoon file 3' },

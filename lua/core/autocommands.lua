@@ -23,12 +23,14 @@ autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
   end,
 })
 
--- Notification when file changes
+-- Notification when file changes and refresh syntax
 autocmd('FileChangedShellPost', {
-  desc = 'Notify when file is changed externally',
+  desc = 'Notify when file is changed externally and refresh syntax',
   group = augroup('notify-file-change', { clear = true }),
   pattern = '*',
   callback = function()
+    -- Use the global refresh_buffer function
+    _G.refresh_buffer()
     vim.notify('File changed on disk. Buffer reloaded!', vim.log.levels.INFO, { title = 'File Reloaded' })
   end,
 })
