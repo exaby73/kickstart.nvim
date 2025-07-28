@@ -6,19 +6,19 @@ return {
     'stevearc/dressing.nvim', -- optional for vim.ui.select
   },
   config = function()
-    local telescope = require('telescope')
-    
+    local telescope = require 'telescope'
+
     -- This function extends the shared LSP keymaps with Flutter-specific ones
     local on_attach = function(client, bufnr)
       -- First, apply all the shared LSP keymaps
       require('custom.lsp-keymaps').on_attach(client, bufnr)
-      
+
       -- Helper function to set keymaps (for Flutter-specific ones)
       local function map(keys, func, desc, mode)
         mode = mode or 'n'
         vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = 'Flutter: ' .. desc })
       end
-      
+
       -- Flutter specific keymaps
       map('<leader>Fr', '<cmd>FlutterRun<cr>', '[R]un')
       map('<leader>Fq', '<cmd>FlutterQuit<cr>', '[Q]uit')
@@ -32,15 +32,15 @@ return {
       map('<leader>FO', '<cmd>FlutterOpenDevTools<cr>', '[O]pen Dev Tools')
       map('<leader>Fp', '<cmd>FlutterCopyProfilerUrl<cr>', 'Copy [P]rofiler URL')
       map('<leader>Fl', '<cmd>FlutterLspRestart<cr>', '[L]SP Restart')
-      
+
       -- Use Telescope for Flutter commands
       if telescope then
-        telescope.load_extension('flutter')
+        telescope.load_extension 'flutter'
         map('<leader>Ff', '<cmd>Telescope flutter commands<cr>', 'Commands (Telescope)')
       end
     end
 
-    require('flutter-tools').setup({
+    require('flutter-tools').setup {
       ui = {
         border = 'rounded',
         notification_style = 'native',
@@ -105,14 +105,15 @@ return {
           showTodos = true,
           completeFunctionCalls = true,
           analysisExcludedFolders = {
-            vim.fn.expand('$HOME/.pub-cache'),
-            vim.fn.expand('$HOME/fvm'),
+            vim.fn.expand '$HOME/.pub-cache',
+            vim.fn.expand '$HOME/fvm',
           },
           renameFilesWithClasses = 'prompt',
           enableSnippets = true,
           updateImportsOnRename = true,
         },
       },
-    })
+    }
   end,
 }
+
