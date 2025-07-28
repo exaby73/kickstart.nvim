@@ -36,8 +36,12 @@ function M.on_attach(client, bufnr)
   map('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation', 'i')
 
   -- Diagnostic keymaps
-  map('[d', function() vim.diagnostic.jump({ count = -1 }) end, 'Go to previous diagnostic')
-  map(']d', function() vim.diagnostic.jump({ count = 1 }) end, 'Go to next diagnostic')
+  map('[d', function()
+    vim.diagnostic.jump { count = -1 }
+  end, 'Go to previous diagnostic')
+  map(']d', function()
+    vim.diagnostic.jump { count = 1 }
+  end, 'Go to next diagnostic')
   map('<leader>e', vim.diagnostic.open_float, 'Open floating diagnostic')
 
   -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
@@ -82,4 +86,3 @@ function M.on_attach(client, bufnr)
 end
 
 return M
-
