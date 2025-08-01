@@ -54,3 +54,15 @@ if timer then
     end
   end))
 end
+
+-- Auto refresh Neo-tree to pick up git changes
+local neotree_timer = vim.loop.new_timer()
+if neotree_timer then
+  neotree_timer:start(2000, 2000, vim.schedule_wrap(function()
+    -- Only refresh if Neo-tree is loaded
+    local ok, manager = pcall(require, 'neo-tree.sources.manager')
+    if ok then
+      manager.refresh('filesystem')
+    end
+  end))
+end

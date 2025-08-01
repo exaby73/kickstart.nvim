@@ -1,6 +1,9 @@
 -- Neo-tree is a Neovim plugin to browse the file system
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 
+-- Store the initial working directory
+vim.g.initial_cwd = vim.g.initial_cwd or vim.fn.getcwd()
+
 return {
   'nvim-neo-tree/neo-tree.nvim',
   version = '*',
@@ -12,6 +15,9 @@ return {
   lazy = false,
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<leader>tr', function()
+        vim.cmd('Neotree dir=' .. vim.g.initial_cwd)
+      end, desc = '[T]ree [R]eset to initial cwd', silent = true },
   },
   opts = {
     filesystem = {
@@ -22,6 +28,13 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['R'] = {
+            function(state)
+              -- Navigate to the initial directory
+              require('neo-tree.sources.manager').navigate(state.name, vim.g.initial_cwd)
+            end,
+            desc = 'Reset to initial cwd',
+          },
         },
       },
     },
