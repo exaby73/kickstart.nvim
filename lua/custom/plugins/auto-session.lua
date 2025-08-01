@@ -11,4 +11,9 @@ return {
     auto_save_enabled = true,
     auto_restore_enabled = true,
   },
+  keys = {
+    { '<leader>Sd', '<cmd>SessionDelete<cr>', desc = 'Delete current session' },
+    { '<leader>SD', '<cmd>SessionPurgeOrphaned<cr>', desc = 'Delete orphaned sessions' },
+    { '<leader>Ss', '<cmd>SessionSearch<cr>', desc = 'Search sessions' },
+  },
 }
